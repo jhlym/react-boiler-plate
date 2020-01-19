@@ -4,6 +4,7 @@ const AuthLayout = () => {
   return (
     <div>
       {/* Route 경로 */}
+      AuthLayout
     </div>
   )
 }
