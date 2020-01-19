@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './assets/css/style';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 // react router
@@ -10,17 +9,17 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import createSagaMiddleware from 'redux-saga';
+import rootReducer, { rootSaga } from './redux/modules';
 // util
 import { HelmetProvider } from 'react-helmet-async';
 
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(
-  // reducer
-  null,
+  rootReducer,
   composeWithDevTools(applyMiddleware(sagaMiddleware)),
 );
 // parameter에 root saga function
-sagaMiddleware.run(null);
+sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
   <Provider store={store}>
