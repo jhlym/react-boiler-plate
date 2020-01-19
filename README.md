@@ -1,68 +1,63 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
+layout: post
+author: 'junhyuk'
+tags: [react]
+---
 
-## Available Scripts
+> React로 개발하면서 나만의 boiler plate를 만들어 놓으면 좋겠다고 생각했습니다.  
+> 기본적으로 저는 css 라이브러리 중에 semantic-ui를 좋아합니다.  
+> 공홈에 예시가 정말 자세히 나와있고, 커스텀도 가능하기 때문입니다.  
+> 그리고 상태관리에는 Saga를 이용할 건데요.  
+> 왜냐하면 dispatch 후에 다시 dispatch가 필요한 경우에도 유용하고,  
+> socket.io를 이용하기에도 적합하고, 무엇보다 saga는 순수 함수형을 지향하기 때문에 모듈화가 더 쉽기 때문입니다.
 
-In the project directory, you can run:
+# 프로젝트 디렉토리 기본 구조
 
-### `yarn start`
+```
+asset         # 정적 리소스(css, scss, img, svg 등등...)
+api           # restful api 호출 관련 디렉토리
+components    # 재사용 가능한 컴포넌트
+containers    # 비즈니스 로직이 들어간 컴포넌트
+pages         # 컨테이너 컴포넌트들을 조합하여 만든 페이지 컴포넌트
+layout        # 페이지 컴포넌트마다 쓰이는 공통 레이아웃
+route         # route 컴포넌트를 관리하는 디렉토리
+redux         # ducks pattern으로 action type, create action function, reducer를 하나의 파일에서 관리합니다.
+utils         # 유틸 함수
+```
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# 사용 라이브러리
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- `react`
+- `react-dom`
 
-### `yarn test`
+- Router
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  - `react-router-dom`
 
-### `yarn build`
+- Redux
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  - `redux`
+  - `redux-actions`
+  - `react-redux`
+  - `redux-saga`
+  - `redux-devtools-extension`
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- UI
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  - `semantic-ui-react`
+  - `semantic-ui-css`
+  - `styled-components`
 
-### `yarn eject`
+- API
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+  - `axios`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Utils
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+  - `react-helmet-async`
+  - `qs`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# 주의 사항
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- `yarn` 패키지 모듈 관리자 사용을 권장합니다.
+- `yarn install`로 `module`을 설치한 후에 `yarn start`로 실행하길 바랍니다.
