@@ -44,8 +44,10 @@ utils         # 유틸 함수
 
 - UI
 
-  - `semantic-ui-react`
-  - `semantic-ui-css`
+  - ~~~`semantic-ui-react`~~~
+  - ~~~`semantic-ui-css`~~~
+  - `bootstarp`
+  - `reactstrap`
   - `styled-components`
 
 - API
